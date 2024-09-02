@@ -45,9 +45,6 @@ body{
     display: flex;
     justify-content: center;
 }
-.grid-item:focus{
-    outline: none;
-}
 
 .disabled{
     pointer-events: none;
