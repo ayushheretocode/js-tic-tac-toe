@@ -33,7 +33,7 @@ function markOnTheBoard()
 {
     if(player===1)
     {
-        this.textContent="❎"
+        this.textContent="X"
         this.classList.add('disabled')
         player+=1
         moves+=1
@@ -41,7 +41,7 @@ function markOnTheBoard()
     }
     else if(player===2)
     {
-        this.textContent="0️⃣"
+        this.textContent="0"
         this.classList.add('disabled')
         player-=1
         moves+=1
@@ -117,7 +117,7 @@ function checkForWin(){
 
 function whosTheWinner()
 {
-    if(winnerMark==="❎")
+    if(winnerMark==="X")
     {
         topText.innerText="PLAYER 1 WINS!!! ❎"
     }
