@@ -36,9 +36,11 @@ body{
     height: 100px;
     width: 100px;
     background-color: #04172d;
+    border-radius: 16px;
+    color: white;
     cursor: pointer;
     font-size: 100px;
-    font-family: "Roboto", sans-serif;
+    font-family: inherit;
     line-height: 1;
     display: flex;
     justify-content: center;
