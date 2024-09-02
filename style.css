@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Happy Monkey", system-ui;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.container{
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+#top-text{
+    font-size: 40px;
+    font-weight: 800;
+    color: #04172d;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 4px;
+}
+
+.grid-item{
+    height: 100px;
+    width: 100px;
+    background-color: #04172d;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 102px;
+    font-family: "Roboto", sans-serif;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.disabled{
+    pointer-events: none;
+}
+
+#start-btn{
+    background-color: goldenrod;
+    color: #04172d;
+    width: 220px;
+    padding: 8px 0;
+    font-family: inherit;
+    font-size: 22px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+#start-btn:hover{
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width:500px)
+{
+    #top-text{
+        font-size: 32px;
+    }
+    #start-btn
+    {
+        width: 200px;
+    }
+}
