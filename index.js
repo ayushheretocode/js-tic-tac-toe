@@ -6,18 +6,19 @@ let player
 let moves
 
 
-function clearBoard()
+function renderGame()
 {
     gridItems.forEach(item=>{
         item.removeEventListener('click',markOnTheBoard)
         item.classList.remove('disabled')
+        item.style.color='white'
         item.innerText=""
     })
 }
 
 function startGame()
 {
-    clearBoard()
+    renderGame()
 
     startBtnText.innerText="New Game"
 
@@ -57,19 +58,19 @@ function checkForWin(){
     if(gridItems[0].innerText && gridItems[0].innerText===gridItems[1].innerText && gridItems[1].innerText===gridItems[2].innerText)
     {
         winnerMark=gridItems[0].innerText
-        whosTheWinner()
+        whosTheWinner(0,1,2)
         return
     }
     if(gridItems[3].innerText && gridItems[3].innerText===gridItems[4].innerText && gridItems[4].innerText===gridItems[5].innerText)
     {
         winnerMark=gridItems[3].innerText
-        whosTheWinner()
+        whosTheWinner(3,4,5)
         return
     }
     if(gridItems[6].innerText && gridItems[6].innerText===gridItems[7].innerText && gridItems[7].innerText===gridItems[8].innerText)
     {
         winnerMark=gridItems[6].innerText
-        whosTheWinner()
+        whosTheWinner(6,7,8)
         return
     }
 
@@ -77,19 +78,19 @@ function checkForWin(){
     if(gridItems[0].innerText && gridItems[0].innerText===gridItems[3].innerText && gridItems[3].innerText===gridItems[6].innerText)
     {
         winnerMark=gridItems[0].innerText
-        whosTheWinner()
+        whosTheWinner(0,3,6)
         return
     }
     if(gridItems[1].innerText && gridItems[1].innerText===gridItems[4].innerText && gridItems[4].innerText===gridItems[7].innerText)
     {
         winnerMark=gridItems[1].innerText
-        whosTheWinner()
+        whosTheWinner(1,4,7)
         return
     }
     if(gridItems[2].innerText && gridItems[2].innerText===gridItems[5].innerText && gridItems[5].innerText===gridItems[8].innerText)
     {
         winnerMark=gridItems[2].innerText
-        whosTheWinner()
+        whosTheWinner(2,5,8)
         return
     }
 
@@ -97,13 +98,13 @@ function checkForWin(){
     if(gridItems[0].innerText && gridItems[0].innerText===gridItems[4].innerText && gridItems[4].innerText===gridItems[8].innerText)
     {
         winnerMark=gridItems[0].innerText
-        whosTheWinner()
+        whosTheWinner(0,4,8)
         return
     }
     if(gridItems[2].innerText && gridItems[2].innerText===gridItems[4].innerText && gridItems[4].innerText===gridItems[6].innerText)
     {
         winnerMark=gridItems[2].innerText
-        whosTheWinner()
+        whosTheWinner(2,4,6)
         return
     }
 
@@ -115,8 +116,11 @@ function checkForWin(){
     }
 }
 
-function whosTheWinner()
+function whosTheWinner(a,b,c)
 {
+    gridItems[a].style.color='green'
+    gridItems[b].style.color='green'
+    gridItems[c].style.color='green'
     if(winnerMark==="X")
     {
         topText.innerText="PLAYER 1 WINS!!! ❎"
